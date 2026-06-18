@@ -1,0 +1,6 @@
+{
+  "name": "Editor & Designer Portfolio",
+  "description": "A minimalist, modern, and highly animated portfolio showcasing professional video editing and thumbnail design work, featuring high-fidelity interactive elements and an animated contact form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

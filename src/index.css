@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-cyber-blue: #3b82f6;
+  --color-cyber-accent: #2563eb;
+  --color-dark-bg: #09090b;
+  --color-dark-card: #121214;
+  --color-dark-card-lighter: #1e1e24;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dark-bg);
+    color: #f4f4f5;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom solid glow and modern hover states */
+.hover-glow {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* --- PREMIUM LIGHT THEME OVERRIDES --- */
+.light, html.light {
+  color-scheme: light;
+}
+
+.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Backgrounds */
+.light .bg-zinc-950,
+.light .bg-black {
+  background-color: #f8fafc !important;
+}
+
+.light .bg-zinc-900,
+.light .bg-zinc-900\/90,
+.light .bg-zinc-950\/95,
+.light .bg-zinc-900\/50,
+.light .bg-zinc-900\/40,
+.light .bg-zinc-950\/70,
+.light .bg-zinc-950\/60 {
+  background-color: #ffffff !important;
+}
+
+.light .bg-zinc-900\/10 {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light .bg-zinc-900\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Inner borders */
+.light .border-zinc-800,
+.light .border-zinc-850,
+.light .border-zinc-900,
+.light .border-zinc-905,
+.light .border-zinc-900\/60,
+.light .border-zinc-900\/80,
+.light .border-zinc-800\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Hover borders */
+.light .hover\:border-zinc-700\/65:hover,
+.light .hover\:border-zinc-800:hover,
+.light .group:hover .border-zinc-800,
+.light .group:hover .border-zinc-850 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Text overrides */
+.light .text-white,
+.light .text-zinc-100,
+.light .text-zinc-200,
+.light .text-zinc-300 {
+  color: #0f172a !important;
+}
+
+.light .text-zinc-400,
+.light .text-zinc-500 {
+  color: #475569 !important;
+}
+
+.light .text-zinc-600,
+.light .text-zinc-500\/80 {
+  color: #64748b !important;
+}
+
+/* Form controls */
+.light input,
+.light textarea,
+.light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light input:focus,
+.light textarea:focus {
+  border-color: #3b82f6 !important;
+  outline: none !important;
+}
+
+/* Success notification card */
+.light .bg-zinc-900.border-emerald-500\/30 {
+  background-color: #ffffff !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Header badge components */
+.light .bg-zinc-900.border-zinc-800,
+.light .bg-zinc-900\/90.border-zinc-800 {
+  background-color: rgba(15, 23, 42, 0.03) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .text-zinc-400.font-medium.uppercase {
+  color: #64748b !important;
+}
+
+/* Grid layout highlights & filters */
+.light .text-zinc-400.hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+.light .bg-zinc-900.p-1.rounded-lg.border.border-zinc-800\/80 {
+  background-color: rgba(15, 23, 42, 0.03) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light .text-zinc-400.hover\:text-zinc-200 {
+  color: #64748b !important;
+}
+.light .text-zinc-400.hover\:text-zinc-200:hover {
+  color: #0f172a !important;
+}
+
+/* Depth shadow profiles */
+.light .shadow-lg,
+.light .shadow-xl,
+.light .shadow-2xl {
+  box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.06), 0 1px 3px 0 rgba(15, 23, 42, 0.02) !important;
+}
+
+/* Scrollbar styles for light mode */
+.light::-webkit-scrollbar-track,
+.light ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+.light::-webkit-scrollbar-thumb,
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+.light::-webkit-scrollbar-thumb:hover,
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Ambient glow & accents */
+.light .bg-blue-600\/10 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
