@@ -4,7 +4,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 'vid-1',
     title: 'Cinematic Travel Reel - Pacific Coastline',
-    category: 'video',
+    category: 'longform',
     imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop',
     videoUrl: 'https://vjs.zencdn.net/v/oceans.mp4',
     tags: ['Color Grading', 'Sound Design', 'Speed Ramping'],
@@ -12,47 +12,25 @@ export const portfolioItems: PortfolioItem[] = [
     stats: { label: 'Retention Rate', value: '72%' },
     description: 'A fast-paced, high-energy travel montage engineered to maximize retention in the first 5 seconds. Features dynamic motion blur transitions, custom audio soundscapes, and cinematic teal-and-orange grading.',
     duration: '1:45',
-    softwareUsed: ['Premiere Pro', 'CapCut']
-  },
-  {
-    id: 'thumb-1',
-    title: 'Tech Review Redesign - Is this the future?',
-    category: 'thumbnail',
-    imageUrl: 'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?q=80&w=800&auto=format&fit=crop',
-    tags: ['3D Text', 'Glow Effects', 'Color Correction'],
-    client: 'ByteTech (1.4M Subs)',
-    stats: { label: 'Click-Through Rate (CTR)', value: '11.8%' },
-    description: 'A high-contrast tech product thumbnail featuring extreme highlights, custom 3D typography, and realistic atmospheric glow to draw the viewer\'s eyes directly to the central focal point.',
-    softwareUsed: ['Photoshop', 'Lightroom']
+    softwareUsed: ['Premiere Pro', 'DaVinci Resolve']
   },
   {
     id: 'vid-2',
     title: 'Tech Unboxing: Next-Gen Smartphone Review',
-    category: 'video',
+    category: 'longform',
     imageUrl: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800&auto=format&fit=crop',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
     tags: ['Motion Graphics', 'B-Roll Editing', 'Cinematic LUTs'],
     client: 'MK-Tech Reviews',
     stats: { label: 'Views Generated', value: '1.2M+' },
-    description: 'Slick and ultra-precise tech unboxing with micro-glowing text overlays, dynamic speed ramps, and multi-camera synchronous editing for clean interactive transitions.',
+    description: 'Slick and ultra-precise tech review with micro-glowing text overlays, dynamic speed ramps, and multi-camera synchronous editing for clean interactive transitions.',
     duration: '12:14',
-    softwareUsed: ['Premiere Pro', 'CapCut']
-  },
-  {
-    id: 'thumb-2',
-    title: 'Cyberpunk Game Release - Ultimate Guide',
-    category: 'thumbnail',
-    imageUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop',
-    tags: ['Vibrant Neon', 'Character Outlines', 'Focal Highlights'],
-    client: 'CyberGamer Pro',
-    stats: { label: 'CTR Improvement', value: '+4.5%' },
-    description: 'Designed targeting gaming audiences. Incorporated neon magenta/cyan rim lighting on the game character, paired with bold italicized typography and high value brush strokes.',
-    softwareUsed: ['PixelLab', 'PicsArt', 'Remini']
+    softwareUsed: ['Premiere Pro', 'After Effects']
   },
   {
     id: 'vid-3',
     title: 'Gaming Championship Hype Video 2026',
-    category: 'video',
+    category: 'longform',
     imageUrl: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
     tags: ['Beat Syncing', 'Screen Shakes', 'Visual FX'],
@@ -60,42 +38,72 @@ export const portfolioItems: PortfolioItem[] = [
     stats: { label: 'Audience Retention', value: '84%' },
     description: 'Hype montage synchronized to a custom industrial soundtrack. Every strike, camera slide, and drop triggers visual screen shakes, chromatic aberration transitions, and sound effect accents.',
     duration: '0:52',
-    softwareUsed: ['Alight Motion', 'VN Editor', 'CapCut']
-  },
-  {
-    id: 'thumb-3',
-    title: 'Stock Market Crash - Protect Your Wealth',
-    category: 'thumbnail',
-    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop',
-    tags: ['Drama Contrast', 'Matte Painting', 'Typography'],
-    client: 'Capital Insight (800K Subs)',
-    stats: { label: 'Initial Click Rate', value: '14.2%' },
-    description: 'A finance thumbnail featuring a high-risk dramatic background, 3D golden arrows of trend-reversal, and crisp typography utilizing the rule-of-thirds for visual impact.',
-    softwareUsed: ['Photoshop']
+    softwareUsed: ['Premiere Pro', 'After Effects']
   },
   {
     id: 'vid-4',
     title: 'Sound Design & Beats Showcase Studio Session',
-    category: 'video',
+    category: 'longform',
     imageUrl: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
-    tags: ['Audio Mixing', 'Voley FX', 'Rhythmic Triggers'],
+    tags: ['Audio Mixing', 'Foley FX', 'Rhythmic Triggers'],
     client: 'SubBass Records',
     stats: { label: 'Audio Engagement', value: '95%' },
     description: 'A close-up studio session demonstrating Foley sound synthesis, dynamic audio mastering and rhythmic video speed edits matching high-pitch subwoofers.',
     duration: '9:37',
-    softwareUsed: ['VN Editor', 'CapCut', 'Alight Motion']
+    softwareUsed: ['Premiere Pro', 'Audition']
   },
   {
-    id: 'thumb-4',
-    title: 'We Built a Rocket in our Backyard!',
-    category: 'thumbnail',
+    id: 'short-1',
+    title: 'Minimalist Design Trends - Aesthetic TikTok',
+    category: 'shorts',
+    imageUrl: 'https://images.unsplash.com/photo-1468495244123-6c6c332eeece?q=80&w=800&auto=format&fit=crop',
+    videoUrl: 'https://vjs.zencdn.net/v/oceans.mp4',
+    tags: ['Dynamic Captions', 'Sound Design', '9:16 Editing'],
+    client: 'ByteTech Media',
+    stats: { label: 'TikTok Views', value: '3.4M' },
+    description: 'A vertical reel focused on minimalist architecture. Formatted with automated pop-in transcripts, visual zoom trackers, and curated background loops.',
+    duration: '0:45',
+    softwareUsed: ['CapCut', 'After Effects']
+  },
+  {
+    id: 'short-2',
+    title: 'The AI Shift - High-Hook YouTube Short',
+    category: 'shorts',
+    imageUrl: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=800&auto=format&fit=crop',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4',
+    tags: ['Vibrant Text', 'Fast Pacing', 'Sound Hooks'],
+    client: 'Future Mind Group',
+    stats: { label: 'Retention Rate', value: '112%' },
+    description: 'Highly engaging explainer short featuring custom progress bars, interactive zooms, and hand-selected sound effect triggers every 1.5 seconds.',
+    duration: '0:58',
+    softwareUsed: ['CapCut', 'Premiere Pro']
+  },
+  {
+    id: 'short-3',
+    title: 'Stock Market Crash - TikTok Finance Reel',
+    category: 'shorts',
+    imageUrl: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
+    tags: ['Emoji Pops', 'Zoom Effects', 'Highlight Clips'],
+    client: 'Capital Insight',
+    stats: { label: 'Shorts CTR', value: '15.4%' },
+    description: 'Slick vertical breakdown of major finance trends. Built to capture infinite scroll attention with high contrast overlays and visual pointers.',
+    duration: '0:55',
+    softwareUsed: ['Premiere Pro', 'CapCut']
+  },
+  {
+    id: 'short-4',
+    title: 'VFX Behind The Scenes - Reels Transition',
+    category: 'shorts',
     imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
-    tags: ['Expression Grabs', 'Sky Replacement', 'Saturation Boost'],
-    client: 'The Backyard Labs',
-    stats: { label: 'CTR Scale', value: '10.9%' },
-    description: 'Vibrant, high-saturation adventure thumbnail. Combines high-resolution face expression cutouts, custom colorful smoke plumes overlay, and custom atmospheric mist.',
-    softwareUsed: ['PixelLab', 'PicsArt', 'Lightroom', 'Remini']
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4',
+    tags: ['VFX Editing', 'Splitscreen', 'Soundscapes'],
+    client: 'Backyard Studios',
+    stats: { label: 'Engagement Rate', value: '24%' },
+    description: 'A seamless before-and-after mask transition showing the raw green-screen clip versus the fully-color-graded final CGI background render, customized for Instagram Reels.',
+    duration: '0:30',
+    softwareUsed: ['After Effects', 'Premiere Pro']
   }
 ];
 
@@ -103,46 +111,46 @@ export const services: Service[] = [
   {
     id: 'srv-1',
     title: 'High-Retention Video Editing',
-    description: 'Masterfully edited clips with pacing engineered for maximum modern audience retention. Dynamic hooks, seamless audio landscapes, and custom B-roll sequencing.',
+    description: 'Masterfully edited longform content with pacing engineered for maximum audience retention. Dynamic visual hooks, seamless audio landscapes, and custom B-roll sequencing.',
     iconName: 'Play',
     features: [
       'Sub-second cuts matching audio triggers',
-      'Custom visual effect overlays (VFX)',
+      'Advanced storytelling flow with structural retention hooks',
       'Cinematic color grading & LUT matching',
-      'Dynamic typography & animated subtitle hooks'
+      'Custom subtitle animations and text-tracked popups'
     ]
   },
   {
     id: 'srv-2',
-    title: 'High-Clickrate Thumbnail Design',
-    description: 'Vibrant thumbnails constructed using composite image styling, professional lighting effects, and clean typography that stand out on overloaded feeds.',
+    title: 'Creative Motion Graphics & VFX',
+    description: 'Injecting premium visual enhancements like custom animated lower-thirds, graphical screen transitions, overlay guides, and subtle VFX composites.',
     iconName: 'Sparkles',
     features: [
-      'Dramatic lighting & portrait rim-lights',
-      '3D custom typography with neon emissives',
-      'Clickthrough-tested composition structures',
-      'Extremely high color contrast and readability'
+      'Sleek kinetic typography & dynamic maps integration',
+      '3D camera-tracking text and modern floating mockups',
+      'Sound-reactive graphical elements and beat syncs',
+      'Seamless multi-platform transition packs'
     ]
   },
   {
     id: 'srv-3',
-    title: 'Social Media Asset Scaling',
-    description: 'Format adaptation that converts standard video reels into high-performing short-form media tailored for YouTube Shorts, Instagram Reels, and TikTok.',
+    title: 'Viral Vertical Shorts & Reels',
+    description: 'Optimized 9:16 format conversion and native creation designed to capture immediately the fast-paced scroll behavior on TikTok, YouTube Shorts, and Reels.',
     iconName: 'Smartphone',
     features: [
-      'Smart 9:16 vertical crop with visual trackers',
-      'Retention-optimized caption style structures',
-      'Multi-platform export optimization',
-      'A/B tested visual cover variants'
+      'Sub-second text-sync captions with energetic styling',
+      'Smart face tracking for action vertical zooms',
+      'Sound effect design and dynamic visual loops',
+      'High Clickrate video outline covers and titles'
     ]
   }
 ];
 
 export const stats: Stat[] = [
-  { id: 'stat-1', value: '250', label: 'Videos Edited', suffix: '+' },
-  { id: 'stat-2', value: '500', label: 'Thumbnails Styled', suffix: '+' },
-  { id: 'stat-3', value: '150', label: 'Total Views Generated', suffix: 'M+' },
-  { id: 'stat-4', value: '12.4', label: 'Average CTR Achieved', suffix: '%' }
+  { id: 'stat-1', value: '450', label: 'Longform Videos Edited', suffix: '+' },
+  { id: 'stat-2', value: '800', label: 'Viral Vertical Shorts Created', suffix: '+' },
+  { id: 'stat-3', value: '250', label: 'Total Views Generated', suffix: 'M+' },
+  { id: 'stat-4', value: '85.2', label: 'Average Client Retention', suffix: '%' }
 ];
 
 export const testimonials: Testimonial[] = [
@@ -151,23 +159,31 @@ export const testimonials: Testimonial[] = [
     name: 'Marcus K.',
     role: 'Founder, ByteTech Media (1.5M Subs)',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop',
-    content: 'Our CTR went from a stagnant 5% to over 11.5% in the first month. The combination of intense thumbnail lighting with custom Premiere editing hooks completely changed our channel trajectory!',
-    statsHighlight: '11.5% Peak CTR'
+    content: 'Our engagement and viewer retention went from a stagnant 45% to over 72% in the first month. The combination of sub-second pacing and customized sound design completely changed our channel velocity!',
+    statsHighlight: '72% Retention Achieved'
   },
   {
     id: 'test-2',
     name: 'Diana Reyes',
     role: 'Creative Director, Wanderlust Channel',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop',
-    content: 'The pacing in these travel reels is incredible. Highly professional color grading and customized ambient soundscapes that keep the viewer completely immersed. Engagement is through the roof!',
-    statsHighlight: '+43% Engagement'
+    content: 'The storytelling pace of the longform travel assets has been incredible. Highly professional color grading and customized ambient soundscapes that keep the viewers glued to the screen.',
+    statsHighlight: '+43% Subscriptions'
   },
   {
     id: 'test-3',
     name: 'Julian V.',
-    role: 'Co-Host, The Crypto Podcast',
+    role: 'Presenter, The Tech Horizon',
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
-    content: 'Absolutely incredible attention to detail. Fast turnarounds, crystal clear 3D overlays, and our short-form content is earning double the average standard watch time.',
-    statsHighlight: '2x Retention Rate'
+    content: 'The short-form shorts and reels are absolute masterclasses. Fast captions, perfect sound effects, and standard watch time has literally doubled on TikTok and YouTube Shorts.',
+    statsHighlight: '2x Watch Time Scale'
+  },
+  {
+    id: 'test-4',
+    name: 'Sarah Peterson',
+    role: 'Producer, Apex Gaming Network',
+    avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+    content: 'Working on a monthly retainer plan with Samuel has been a game-changer. The turnarounds are ultra-fast, kinetic titles look gorgeous, and our video editors count him as a central asset.',
+    statsHighlight: 'Ultra-Fast 24h Turnaround'
   }
 ];

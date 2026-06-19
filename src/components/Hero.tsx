@@ -4,9 +4,9 @@ import { ArrowDown, Sparkles, Film, ArrowRight, Video, Layers, MousePointerClick
 
 const skills = [
   'High-Retention Video Editor',
-  'Thumbnail Composition Designer',
+  'Short-Form Reel & TikTok Expert',
   'Cinematic Master Colorist',
-  'Short-Form Engagement Strategist'
+  'Post-Production Specialist'
 ];
 
 function TypingEffect() {
@@ -44,8 +44,8 @@ function TypingEffect() {
 
   return (
     <span className="inline-block relative">
-      <span className="text-blue-500">{currentText}</span>
-      <span className="absolute -right-1.5 top-0 bottom-0 w-[2px] bg-blue-500 animate-pulse" />
+      <span className="text-accentBlue">{currentText}</span>
+      <span className="absolute -right-1.5 top-0 bottom-0 w-[2px] bg-accentBlue animate-pulse" />
     </span>
   );
 }
@@ -59,11 +59,11 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-zinc-950 px-4 md:px-8 py-24">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-canvas px-4 md:px-8 py-24 transition-colors duration-300">
       {/* Absolute Ambient Solid Spotlights (no gradients in elements) */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.04),transparent_60%)] pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 1px)`,
+        backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 1px)`,
         backgroundSize: '24px 24px'
       }} />
 
@@ -77,10 +77,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-lg w-fit mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-borderGrid rounded-lg w-fit mb-6 shadow-sm"
           >
-            <Sparkles className="w-3.5 h-3.5 text-blue-500" />
-            <span className="text-xs font-mono tracking-wider text-zinc-400 font-medium uppercase">
+            <Sparkles className="w-3.5 h-3.5 text-accentBlue" />
+            <span className="text-xs font-mono tracking-wider text-textSecondary font-medium uppercase">
               Creative Studio Workstation
             </span>
           </motion.div>
@@ -90,10 +90,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-tight text-white leading-[1.15] mb-6 h-auto"
+            className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-tight text-textPrimary leading-[1.15] mb-6 h-auto"
           >
             I serve as your professional <br />
-            <span className="font-bold min-h-[36px] sm:min-h-[44px] block h-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl text-blue-500 mt-2">
+            <span className="font-bold min-h-[36px] sm:min-h-[44px] block h-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl text-accentBlue mt-2">
               <TypingEffect />
             </span>
           </motion.h1>
@@ -103,9 +103,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mb-10 font-sans font-light"
+            className="text-base sm:text-lg text-textSecondary leading-relaxed max-w-xl mb-10 font-sans font-light"
           >
-            Engineering top-tier retainers for media channels. I transform video rushes into high-retention stories, backed by heavy click-inducing A/B tested thumbnail designs.
+            Engineering top-tier retainers for media channels. I transform raw video rushes into high-retention visual stories, driven by intense sound design and cinematic pacing.
           </motion.p>
 
           {/* Solid Buttons */}
@@ -117,7 +117,7 @@ export default function Hero() {
           >
             <button
               onClick={() => scrollToSection('work')}
-              className="group px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium shadow-md transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
+              className="group px-8 py-4 bg-accentBlue hover:opacity-90 text-white rounded-lg font-medium shadow-md transition-all duration-200 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Explore My Portfolios</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -125,7 +125,7 @@ export default function Hero() {
 
             <button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white font-medium transition-all duration-200 rounded-lg text-center cursor-pointer"
+              className="px-8 py-4 bg-surface hover:bg-canvas border border-borderGrid hover:border-textSecondary/50 text-textSecondary hover:text-textPrimary font-medium transition-all duration-200 rounded-lg text-center cursor-pointer"
             >
               Hire Me Immediately
             </button>
@@ -136,21 +136,21 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-12 sm:mt-16 grid grid-cols-3 gap-4 sm:flex sm:items-center sm:gap-8 border-t border-zinc-900 pt-8"
+            className="mt-12 sm:mt-16 grid grid-cols-3 gap-4 sm:flex sm:items-center sm:gap-8 border-t border-borderGrid pt-8"
           >
             <div>
-              <p className="text-xl sm:text-2xl font-mono font-medium text-white">150M+</p>
-              <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Impressions</p>
+              <p className="text-xl sm:text-2xl font-mono font-medium text-textPrimary">150M+</p>
+              <p className="text-[10px] uppercase tracking-widest text-textSecondary mt-1">Impressions</p>
             </div>
-            <div className="hidden sm:block h-8 w-[1px] bg-zinc-900" />
+            <div className="hidden sm:block h-8 w-[1px] bg-borderGrid" />
             <div>
-              <p className="text-xl sm:text-2xl font-mono font-medium text-white">12.4%</p>
-              <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Average CTR</p>
+              <p className="text-xl sm:text-2xl font-mono font-medium text-textPrimary">12.4%</p>
+              <p className="text-[10px] uppercase tracking-widest text-textSecondary mt-1">Average CTR</p>
             </div>
-            <div className="hidden sm:block h-8 w-[1px] bg-zinc-900" />
+            <div className="hidden sm:block h-8 w-[1px] bg-borderGrid" />
             <div>
-              <p className="text-xl sm:text-2xl font-mono font-medium text-white">40+</p>
-              <p className="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Clients</p>
+              <p className="text-xl sm:text-2xl font-mono font-medium text-textPrimary">40+</p>
+              <p className="text-[10px] uppercase tracking-widest text-textSecondary mt-1">Clients</p>
             </div>
           </motion.div>
         </div>
@@ -161,19 +161,19 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[380px] aspect-[4/5] rounded-2xl bg-zinc-900 border border-zinc-800 p-3 shadow-2xl"
+            className="relative w-full max-w-[380px] aspect-[4/5] rounded-2xl bg-surface border border-borderGrid p-3 shadow-2xl transition-colors duration-300"
           >
             {/* The Image Wrapper Frame */}
-            <div className="relative w-full h-full rounded-xl overflow-hidden bg-zinc-950">
+            <div className="relative w-full h-full rounded-xl overflow-hidden bg-canvas">
               <img
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop"
-                alt="Creative Video Editor & Graphic Designer"
+                alt="Creative Video Editor & Narrative Producer"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter grayscale transition-all duration-700 hover:grayscale-0 hover:scale-105"
               />
               
               {/* Solid subtle vignette overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               
             </div>
           </motion.div>
@@ -183,14 +183,14 @@ export default function Hero() {
 
       {/* Scroll Down Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60">
-        <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600">Scroll Down</span>
+        <span className="text-[10px] font-mono uppercase tracking-widest text-textSecondary">Scroll Down</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="cursor-pointer"
           onClick={() => scrollToSection('work')}
         >
-          <ArrowDown className="w-4 h-4 text-zinc-500 hover:text-blue-500 duration-200" />
+          <ArrowDown className="w-4 h-4 text-textSecondary hover:text-accentBlue duration-200" />
         </motion.div>
       </div>
     </section>

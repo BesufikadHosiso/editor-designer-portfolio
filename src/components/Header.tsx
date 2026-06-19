@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Send, Menu, X } from 'lucide-react';
+import { Send, Menu, X, Sun, Moon } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,7 +26,12 @@ const itemVariants = {
   }
 };
 
-export default function Header() {
+interface HeaderProps {
+  theme: 'dark' | 'light';
+  onToggleTheme: () => void;
+}
+
+export default function Header({ theme, onToggleTheme }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -51,6 +56,7 @@ export default function Header() {
   const navLinks = [
     { label: 'Work', id: 'work' },
     { label: 'Skills', id: 'skills' },
+    { label: 'Testimonials', id: 'testimonials' },
   ];
 
   return (
@@ -61,7 +67,7 @@ export default function Header() {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
           scrolled || mobileMenuOpen
-            ? 'bg-zinc-950/95 border-b border-zinc-900/80 backdrop-blur-md py-4' 
+            ? 'bg-canvas/90 border-b border-borderGrid backdrop-blur-md py-4' 
             : 'bg-transparent py-6'
         }`}
       >
@@ -72,11 +78,11 @@ export default function Header() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <div className="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-500 flex items-center justify-center text-white font-mono font-bold text-xs sm:text-sm shadow group-hover:rotate-6 transition-transform">
+            <div className="w-8 h-8 rounded-lg bg-accentBlue flex items-center justify-center text-white font-mono font-bold text-xs sm:text-sm shadow group-hover:rotate-6 transition-transform">
               SE
             </div>
-            <span className="font-display font-semibold text-sm tracking-widest text-white uppercase flex items-center gap-1">
-              SAMI <span className="text-blue-500 font-bold">EDITS</span>
+            <span className="font-display font-semibold text-sm tracking-widest text-textPrimary uppercase flex items-center gap-1">
+              SAMI <span className="text-accentBlue font-bold">EDITS</span>
             </span>
           </div>
 
@@ -88,18 +94,31 @@ export default function Header() {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-white transition-colors cursor-pointer relative py-1 group"
+                  className="text-xs font-mono uppercase tracking-wider text-textSecondary hover:text-textPrimary transition-colors cursor-pointer relative py-1 group"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-blue-500 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-accentBlue group-hover:w-full transition-all duration-300" />
                 </button>
               ))}
             </nav>
 
+            {/* Light/Dark Toggle Button */}
+            <button
+              onClick={onToggleTheme}
+              className="p-2 sm:p-2.5 rounded-lg border border-borderGrid bg-surface hover:bg-canvas text-textSecondary hover:text-textPrimary transition-all cursor-pointer flex items-center justify-center shadow-sm"
+              aria-label="Toggle visual theme"
+            >
+              {theme === 'light' ? (
+                <Moon className="w-4 h-4 text-textPrimary" />
+              ) : (
+                <Sun className="w-4 h-4 text-amber-400 animate-pulse" />
+              )}
+            </button>
+
             {/* Quick Connect Button - next to nav links in large screens */}
             <button
               onClick={() => scrollToSection('contact')}
-              className="hidden md:flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4.5 py-1.5 sm:py-2.5 bg-blue-600 hover:bg-blue-500 text-[10px] sm:text-xs font-mono uppercase tracking-wider text-white rounded-lg shadow font-semibold transition-all cursor-pointer"
+              className="hidden md:flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4.5 py-1.5 sm:py-2.5 bg-accentBlue hover:opacity-90 text-[10px] sm:text-xs font-mono uppercase tracking-wider text-white rounded-lg shadow font-semibold transition-all cursor-pointer"
             >
               <span>Quick Connect</span>
               <Send className="w-3.5 h-3.5" />
@@ -108,9 +127,9 @@ export default function Header() {
             {/* Mobile Menu Icon */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors cursor-pointer flex items-center justify-center z-50 relative"
+              className="md:hidden p-2 text-textSecondary hover:text-textPrimary transition-colors cursor-pointer flex items-center justify-center z-50 relative"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-textPrimary" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -127,7 +146,7 @@ export default function Header() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/95 backdrop-blur-md z-40 md:hidden flex flex-col justify-center items-center p-6"
+              className="fixed inset-0 bg-canvas/95 backdrop-blur-md z-40 md:hidden flex flex-col justify-center items-center p-6"
             >
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -138,13 +157,13 @@ export default function Header() {
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header info bar */}
-                <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">
+                <div className="flex items-center justify-between border-b border-borderGrid pb-3">
+                  <p className="text-[10px] font-mono uppercase tracking-widest text-textSecondary">
                     Menu Panel
                   </p>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="w-8 h-8 rounded-full border border-zinc-850 bg-zinc-900/50 flex items-center justify-center text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                    className="w-8 h-8 rounded-full border border-borderGrid bg-surface flex items-center justify-center text-textSecondary hover:text-textPrimary transition-colors cursor-pointer"
                     aria-label="Close menu"
                   >
                     <X className="w-4 h-4" />
@@ -162,10 +181,10 @@ export default function Header() {
                     <motion.div key={link.id} variants={itemVariants}>
                       <button
                         onClick={() => scrollToSection(link.id)}
-                        className="w-full text-center text-2xl font-display font-medium text-zinc-300 hover:text-blue-400 py-4 cursor-pointer transition-colors relative group"
+                        className="w-full text-center text-2xl font-display font-medium text-textSecondary hover:text-accentBlue py-4 cursor-pointer transition-colors relative group"
                       >
                         {link.label}
-                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-blue-500 group-hover:w-12 transition-all duration-300" />
+                        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-accentBlue group-hover:w-12 transition-all duration-300" />
                       </button>
                     </motion.div>
                   ))}
@@ -174,25 +193,25 @@ export default function Header() {
                   <motion.div variants={itemVariants}>
                     <button
                       onClick={() => scrollToSection('contact')}
-                      className="w-full text-center text-2xl font-display font-semibold text-blue-500 hover:text-blue-400 py-4 cursor-pointer transition-colors relative group flex items-center justify-center gap-2"
+                      className="w-full text-center text-2xl font-display font-semibold text-accentBlue hover:opacity-90 py-4 cursor-pointer transition-colors relative group flex items-center justify-center gap-2"
                     >
                       <span>Work with Me</span>
-                      <Send className="w-5 h-5 text-blue-500 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                      <Send className="w-5 h-5 text-accentBlue group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-200" />
                     </button>
                   </motion.div>
                 </motion.div>
 
                 {/* Footer details */}
-                <div className="flex flex-col items-center gap-3 pt-6 border-t border-zinc-900">
+                <div className="flex flex-col items-center gap-3 pt-6 border-t border-borderGrid">
                   <div className="flex items-center gap-1.5">
-                    <div className="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-white font-mono font-bold text-[10px]">
+                    <div className="w-6 h-6 rounded bg-accentBlue flex items-center justify-center text-white font-mono font-bold text-[10px]">
                       SE
                     </div>
-                    <span className="font-display font-semibold text-xs tracking-wider text-white">
-                      SAMI <span className="text-blue-500">EDITS</span>
+                    <span className="font-display font-semibold text-xs tracking-wider text-textPrimary">
+                      SAMI <span className="text-accentBlue">EDITS</span>
                     </span>
                   </div>
-                  <p className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest mt-1">
+                  <p className="text-[9px] font-mono text-textSecondary uppercase tracking-widest mt-1">
                     Samuel Fitsum © 2026
                   </p>
                 </div>

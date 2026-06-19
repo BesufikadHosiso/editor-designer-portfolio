@@ -1,4 +1,4 @@
-export type CategoryType = 'video' | 'thumbnail';
+export type CategoryType = 'longform' | 'shorts';
 
 export interface PortfolioItem {
   id: string;
